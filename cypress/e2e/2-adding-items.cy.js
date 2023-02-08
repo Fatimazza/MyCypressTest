@@ -63,4 +63,18 @@ describe('Adding Items', () => {
         // check number of items
         cy.get('.todo-list li').should('have.length.at.least', 5)
     })
+
+    it('Disables the built-in Assertion', () => {
+        // try to get a non-existent element
+        // without failing the test
+        // pass it to the `.then($el)` callback
+        // to check it yourself
+        cy.get('does-not-exist')
+            .should(Cypress._.noop)
+            .then(($el) => {
+                if (!$el.length) {
+                    cy.log('There is no element')
+                }
+            })
+    })
 })
