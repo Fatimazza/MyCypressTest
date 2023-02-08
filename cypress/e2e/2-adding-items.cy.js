@@ -12,6 +12,9 @@ describe('Manage Items', () => {
     })
 
     it('Add 2 Items', () => {
-
+        cy.get('.new-todo').type('First Item{Enter}')
+        cy.contains('ul.todo-list', 'First Item').should('be.visible')
+        cy.get('.new-todo').type('Second Item{Enter}')
+        cy.contains('ul.todo-list', 'Second Item').should('be.visible')
     })
 })
