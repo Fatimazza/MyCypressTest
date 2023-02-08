@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 // @ts-check
 
-const baseUrl = Cypress.env('baseUrl')
+const baseUrlProd = Cypress.env('baseUrlProd')
 
 describe('Delete Items', () => {
 
     beforeEach(() => {
-        cy.log('Visiting', baseUrl)
-        cy.visit(baseUrl)
+        cy.log('Visiting', baseUrlProd)
+        cy.visit(baseUrlProd)
     })
 
     it('Load Homepage', () => {
