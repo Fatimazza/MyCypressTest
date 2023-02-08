@@ -29,4 +29,20 @@ describe('Delete Items', () => {
     it('Load Homepage', () => {
         cy.contains('h1', 'todos')
     })
+
+    it.only('Delete All Items', () => {
+        // wait for the page to load the todos
+        cy.wait(1000)
+        // get all todo items (there might not be any!)
+        cy.get('.todo-list li')
+            .should(Cypress._.noop)
+            // for each todo item click the remove button
+            .each(($item) => {
+                cy.wrap($item).find('.destroy').click({
+                    force: true
+                })
+            })
+        // confirm that the item is gone from the dom
+        cy.get('.todo-list li').should('not.exist')
+    })
 })
