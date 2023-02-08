@@ -22,5 +22,11 @@ describe('Load Homepage', () => {
     // cy.contains('[data-cy="app-title"]', 'todos')
     // cy.get('[data-cy="app-title"]').should('have.text', 'todos')
     cy.get('[data-test="new-todo"]').should('have.text', '')
+
+    // assert Navigation Bar
+    cy.get('.navbar-brand').should('have.text', 'cypress.io')
+    cy.get('.navbar').contains('Commands').should('exist')
+    cy.get('.navbar').contains('Utilities').should('exist')
+    cy.get('.navbar').contains('Cypress API').should('exist')
   })
 })
