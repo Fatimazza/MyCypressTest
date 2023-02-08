@@ -29,4 +29,14 @@ describe('Load Homepage', () => {
     cy.get('.navbar').contains('Utilities').should('exist')
     cy.get('.navbar').contains('Cypress API').should('exist')
   })
+
+  it('Show Expected Elements', () => {
+    cy.visit('https://example.cypress.io/todo')
+
+    const selectors = ['header', 'footer', '.new-todo', '.navbar-brand']
+    selectors.forEach((selector) => {
+      cy.get(selector).should('be.visible')
+    })
+
+  })
 })
