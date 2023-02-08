@@ -45,4 +45,13 @@ describe('Manage Items', () => {
         addItem(' ')
         cy.get('.todo-list li').should('not.have.text', ' ')
     })
+
+    it('Add many Items', () => {
+        const Total = 5
+        for (let count = 0; count < Total; count += 1) {
+            addItem(`item ${count}`)
+        }
+        // check number of items
+        cy.get('.todo-list li').should('have.length.at.least', 5)
+    })
 })
