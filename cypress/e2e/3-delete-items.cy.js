@@ -8,6 +8,12 @@ describe('Delete Items', () => {
     beforeEach(() => {
         cy.log('Visiting', baseUrlProd)
         cy.visit(baseUrlProd)
+
+    // Base Url on Config E2E
+    beforeEach(() => {
+        cy.log('Visiting', Cypress.config('baseUrl'))
+        // cy.visit('/')
+        cy.visit('/todo')
     })
 
     it('Load Homepage', () => {

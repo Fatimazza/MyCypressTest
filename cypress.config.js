@@ -6,6 +6,7 @@ module.exports = defineConfig({
     baseUrlStage: 'http://localhost:3000'
   },
   e2e: {
+    baseUrl: 'https://example.cypress.io',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
