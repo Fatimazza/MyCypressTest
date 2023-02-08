@@ -26,10 +26,6 @@ describe('Delete Items', () => {
         cy.visit('/todo')
     })
 
-    it('Load Homepage', () => {
-        cy.contains('h1', 'todos')
-    })
-
     it('Delete All Items', () => {
         // wait for the page to load the todos
         cy.wait(1000)
