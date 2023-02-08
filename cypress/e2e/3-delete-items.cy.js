@@ -30,7 +30,7 @@ describe('Delete Items', () => {
         cy.contains('h1', 'todos')
     })
 
-    it.only('Delete All Items', () => {
+    it('Delete All Items', () => {
         // wait for the page to load the todos
         cy.wait(1000)
         // get all todo items (there might not be any!)
