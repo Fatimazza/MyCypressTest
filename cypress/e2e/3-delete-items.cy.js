@@ -45,4 +45,24 @@ describe('Delete Items', () => {
         // confirm that the item is gone from the dom
         cy.get('.todo-list li').should('not.exist')
     })
+
+    it('Delete All Items by clicking multiple elements', () => {
+        // wait for the page to load the todos
+        cy.wait(1000)
+        // get all todo elements and their destroy buttons
+        // (there might not be any!)
+        // the click on them all at once
+        // see https://on.cypress.io/click
+        cy.get('.todo-list li .destroy')
+            .should(Cypress._.noop)
+            .then(($destroy) => {
+                if ($destroy.length) {
+                    cy.wrap($destroy).click({
+                        force: true, multiple: true
+                    })
+                }
+            })
+        // confirm that the item is gone from the dom
+        cy.get('.todo-list li').should('not.exist')
+    })
 })
