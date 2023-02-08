@@ -26,7 +26,7 @@ describe('Delete Items', () => {
         cy.visit('/todo')
     })
 
-    it('Delete All Items', () => {
+    it('Delete All Items one by one', () => {
         // wait for the page to load the todos
         cy.wait(1000)
         // get all todo items (there might not be any!)
