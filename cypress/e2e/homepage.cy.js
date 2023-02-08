@@ -3,6 +3,6 @@
 
 describe('Load Homepage', () => {
   it('Load Homepage', () => {
-    cy.visit('https://example.cypress.io')
+    cy.visit('https://example.cypress.io/todo')
   })
 })
