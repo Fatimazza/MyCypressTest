@@ -46,15 +46,6 @@ describe('Adding Items', () => {
             .and('not.have.class', 'completed')
     })
 
-    it('Does Not Allow Adding Blank Todos', () => {
-        cy.on('uncaught:exception', (e) => {
-            return !e.message.includes('Cannot add a blank todo')
-        })
-
-        addItem(' ')
-        cy.get('.todo-list li').should('not.have.text', ' ')
-    })
-
     it('Add many Items', () => {
         const Total = 5
         for (let count = 0; count < Total; count += 1) {
@@ -62,6 +53,21 @@ describe('Adding Items', () => {
         }
         // check number of items
         cy.get('.todo-list li').should('have.length.at.least', 5)
+    })
+
+    it('Does Not Allow Adding Blank Todos', () => {
+        cy.on('uncaught:exception', (e) => {
+            // what will happen if this assertion fails?
+            // will the test fail?
+            // expect(e.message).to.include('Cannot add a blank todo')
+            // return false
+
+            // a better shortcut
+            return !e.message.includes('Cannot add a blank todo')
+        })
+
+        addItem(' ')
+        cy.get('.todo-list li').should('not.have.text', ' ')
     })
 
     it('Disables the built-in Assertion', () => {
