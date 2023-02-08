@@ -5,9 +5,11 @@ const baseUrlProd = Cypress.env('baseUrlProd')
 
 describe('Delete Items', () => {
 
-    beforeEach(() => {
+    // Base Url on Config Env
+    /* beforeEach(() => {
         cy.log('Visiting', baseUrlProd)
         cy.visit(baseUrlProd)
+    }) */
 
     // Base Url on Config E2E
     beforeEach(() => {
