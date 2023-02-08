@@ -8,5 +8,8 @@ describe('Load Homepage', () => {
 
     // assert homepage components
     cy.get('.new-todo').get('footer')
+
+    // assertion failed example
+    // cy.contains('h1', 'Todos App')
   })
 })
