@@ -11,6 +11,15 @@ describe('Adding Items', () => {
         cy.contains('h1', 'todos')
     })
 
+    it('Display 2 Items by default', () => {
+        cy.get('.todo-list li').should('have.length', 2)
+
+        cy.get('.todo-list li').first()
+            .should('have.text', 'Pay electric bill')
+        cy.get('.todo-list li').last()
+            .should('have.text', 'Walk the dog')
+    })
+
     it('Add 2 Items', () => {
         cy.get('.new-todo').type('First Item{Enter}')
         cy.contains('ul.todo-list', 'First Item').should('be.visible')
