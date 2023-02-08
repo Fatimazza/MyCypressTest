@@ -18,4 +18,22 @@ describe('Manage Items', () => {
         cy.contains('ul.todo-list', 'Second Item').should('be.visible')
         cy.get('.todo-list li').should('have.length', 4)
     })
+
+    /**
+    * Adds a todo item
+    * @param {string} text
+    */
+    const addItem = (text) => {
+        cy.get('.new-todo').type(`${text}{enter}`)
+    }
+
+    it.only('Add Items with Random text', () => {
+        const randomLabel = `Item ${Math.random().toString()
+            .slice(2, 14)}`
+
+        addItem(randomLabel)
+        cy.contains('.todo-list li', randomLabel)
+            .should('be.visible')
+            .and('not.have.class', 'completed')
+    })
 })
