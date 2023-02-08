@@ -70,7 +70,7 @@ describe('Adding Items', () => {
             .and('not.have.class', 'completed')
     })
 
-    it.only('Add many Items', () => {
+    it('Add many Items', () => {
         const Total = 5
         for (let count = 0; count < Total; count += 1) {
             addItem(`item ${count}`)
