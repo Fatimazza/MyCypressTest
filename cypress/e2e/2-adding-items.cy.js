@@ -27,7 +27,7 @@ describe('Manage Items', () => {
         cy.get('.new-todo').type(`${text}{enter}`)
     }
 
-    it.only('Add Items with Random text', () => {
+    it('Add Items with Random text', () => {
         const randomLabel = `Item ${Math.random().toString()
             .slice(2, 14)}`
 
