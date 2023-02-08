@@ -6,5 +6,7 @@ describe('Load Homepage', () => {
     // visit web page
     cy.visit('https://example.cypress.io/todo')
 
+    // assert homepage components
+    cy.get('.new-todo').get('footer')
   })
 })
