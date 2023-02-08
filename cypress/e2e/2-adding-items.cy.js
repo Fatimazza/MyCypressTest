@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 // @ts-check
 
-describe('Manage Items', () => {
+describe('Adding Items', () => {
 
     beforeEach(() => {
         cy.visit('https://example.cypress.io/todo')
