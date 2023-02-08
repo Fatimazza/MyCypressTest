@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 // @ts-check
 
-describe('Adding Items', () => {
+describe('Load Homepage', () => {
 
     beforeEach(() => {
         cy.visit('https://example.cypress.io/todo')
@@ -18,6 +18,13 @@ describe('Adding Items', () => {
             .should('have.text', 'Pay electric bill')
         cy.get('.todo-list li').last()
             .should('have.text', 'Walk the dog')
+    })
+})
+
+describe('Adding Items', () => {
+
+    beforeEach(() => {
+        cy.visit('https://example.cypress.io/todo')
     })
 
     it('Add one more Items', () => {
