@@ -20,6 +20,23 @@ describe('Adding Items', () => {
             .should('have.text', 'Walk the dog')
     })
 
+    it('Add one more Items', () => {
+        // make sure the application has loaded first
+        cy.wait(1000)
+        // take the initial number of items (could be zero!)
+        // add one more todo via UI
+        // take the new number of items
+        // confirm it is the initial number + 1
+        cy.get('.todo-list li')
+            .should(Cypress._.noop)
+            .its('length')
+            .then((n) => {
+                addItem('My New Item')
+                // now we for sure have at least one item
+                cy.get('.todo-list li').should('have.length', n + 1)
+            })
+    })
+
     it('Add 2 Items', () => {
         cy.get('.new-todo').type('First Item{Enter}')
         cy.contains('ul.todo-list', 'First Item').should('be.visible')
