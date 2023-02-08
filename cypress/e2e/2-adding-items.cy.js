@@ -46,11 +46,13 @@ describe('Adding Items', () => {
             .and('not.have.class', 'completed')
     })
 
-    it('Add many Items', () => {
+    it.only('Add many Items', () => {
         const Total = 5
         for (let count = 0; count < Total; count += 1) {
             addItem(`item ${count}`)
         }
+        cy.log('** complete items **')
+
         // check number of items
         cy.get('.todo-list li').should('have.length.at.least', 5)
     })
