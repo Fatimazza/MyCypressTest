@@ -16,5 +16,6 @@ describe('Manage Items', () => {
         cy.contains('ul.todo-list', 'First Item').should('be.visible')
         cy.get('.new-todo').type('Second Item{Enter}')
         cy.contains('ul.todo-list', 'Second Item').should('be.visible')
+        cy.get('.todo-list li').should('have.length', 4)
     })
 })
