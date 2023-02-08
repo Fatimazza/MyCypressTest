@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 // @ts-check
 
-describe('template spec', () => {
-  it('passes', () => {
+describe('Load Homepage', () => {
+  it('Load Homepage', () => {
     cy.visit('https://example.cypress.io')
   })
 })
