@@ -5,6 +5,14 @@ const baseUrlProd = Cypress.env('baseUrlProd')
 
 describe('Delete Items', () => {
 
+    /**
+    * Adds a todo item
+    * @param {string} text
+    */
+    const addItem = (text) => {
+        cy.get('.new-todo').type(`${text}{enter}`)
+    }
+
     // Base Url on Config Env
     /* beforeEach(() => {
         cy.log('Visiting', baseUrlProd)
