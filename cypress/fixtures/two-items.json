@@ -1,0 +1,12 @@
+[
+  {
+    "title": "First from fixture",
+    "completed": false,
+    "id": 1
+  },
+  {
+    "title": "Second from fixture",
+    "completed": true,
+    "id": 2
+  }
+]

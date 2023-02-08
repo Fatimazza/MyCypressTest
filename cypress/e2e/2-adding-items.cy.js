@@ -109,4 +109,22 @@ describe('Adding Items', () => {
                 }
             })
     })
+
+    it('Add Items from a Fixture', () => {
+        // load a list of todos from a fixture file using cy.fixture
+        // https://on.cypress.io/fixture
+        cy.fixture('two-items.json')
+            // get the list of todos from the fixture using .then callback
+            .then((items) => {
+                // for each item make a cy.request to create it on the server
+                items.forEach((item) => {
+                    addItem(item.title)
+                })
+                // after creating all items,
+                // reload the page and confirm each item is shown
+                items.forEach((item) => {
+                    cy.contains('ul.todo-list', item.title).should('be.visible')
+                })
+            })
+    })
 })
