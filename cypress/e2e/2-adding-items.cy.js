@@ -36,4 +36,13 @@ describe('Manage Items', () => {
             .should('be.visible')
             .and('not.have.class', 'completed')
     })
+
+    it('Does Not Allow Adding Blank Todos', () => {
+        cy.on('uncaught:exception', (e) => {
+            return !e.message.includes('Cannot add a blank todo')
+        })
+
+        addItem(' ')
+        cy.get('.todo-list li').should('not.have.text', ' ')
+    })
 })
