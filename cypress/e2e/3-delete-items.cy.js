@@ -26,6 +26,23 @@ describe('Delete Items', () => {
         cy.visit('/todo')
     })
 
+    it('Delete an Item', () => {
+        // adds a few items
+        addItem('simple')
+        addItem('hard')
+        // deletes the first item
+        cy.contains('.todo-list li', 'simple')
+            .should('exist')
+            .find('.destroy')
+            // use force: true because we don't have the hover
+            .click({ force: true })
+
+        // confirm the deleted item is gone from the dom
+        cy.contains('.todo-list li', 'simple').should('not.exist')
+        // confirm the other item still exists
+        cy.contains('.todo-list li', 'hard').should('exist')
+    })
+
     it('Delete All Items one by one', () => {
         // wait for the page to load the todos
         cy.wait(1000)
