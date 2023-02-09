@@ -34,31 +34,31 @@ node --version
 
 **👉 [Clone this Repository](https://github.com/Fatimazza/MyCypressTest/)** through Terminal or Command Prompt
 
-### Open theProject
+### Open the Project on Editor
 
 Open this Automation Project using VS Code Editor.
 
-### Run the Project
+### Run the Automation Project 
 
-Change to Project directory on Terminal
+Change to Project directory on Terminal or Command Prompt
 
 ```Bash
 cd MyCypressTest
 ```
 
-### Install Cypress
+Install Cypress
 
 ```Bash
 npm install cypress --save-dev
 ```
 
-### Run Test Execution on Terminal
+Run Test Execution on Terminal
 
 ```Bash
 npx cypress run 
 ```
 
-### Run Test Execution via Browser
+Run Test Execution via Browser
 
 ```Bash
 npx cypress open
