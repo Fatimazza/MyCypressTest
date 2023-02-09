@@ -7,3 +7,7 @@ logs
 node_modules
 cypress/videos
 cypress/screenshots
+
+# Generated HTML Report
+cypress/report
+output.html
