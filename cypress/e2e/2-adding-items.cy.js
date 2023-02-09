@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 // @ts-check
 
-describe('Load Homepage', () => {
+describe('Show Default Items', () => {
 
     beforeEach(() => {
         cy.visit('https://example.cypress.io/todo')
@@ -27,7 +27,7 @@ describe('Adding Items', () => {
         cy.visit('https://example.cypress.io/todo')
     })
 
-    it('Add one more Items', () => {
+    it('Add one more Item', () => {
         // make sure the application has loaded first
         cy.wait(1000)
         // take the initial number of items (could be zero!)
