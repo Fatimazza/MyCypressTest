@@ -6,10 +6,6 @@ describe('Load Homepage', () => {
     // visit Homepage
     cy.visit('https://example.cypress.io/todo')
 
-    // https://on.cypress.io/get
-    // assert Homepage elements
-    cy.get('.new-todo').get('footer').should('exist')
-
     // assertion failed example
     // cy.contains('h1', 'Todos App')
 
@@ -31,6 +27,12 @@ describe('Load Homepage', () => {
   })
 
   it('Show Expected Elements', () => {
+    // https://on.cypress.io/get
+    // assert Homepage elements
+    cy.get('.new-todo').get('footer').should('exist')
+  })
+
+  it('Show Expected Elements using loop', () => {
     cy.visit('https://example.cypress.io/todo')
 
     const selectors = ['header', 'footer', '.new-todo', '.navbar-brand']
