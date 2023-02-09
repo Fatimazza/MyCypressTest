@@ -1,7 +1,7 @@
 <h1 align="center">My Cypress Test</h1></br>
 
 <p align="center">
-:sparkles: Web Automation testing using Cypress, Javascript, and Mochawesome library for HTML Report. :sparkles:
+:sparkles: Web Automation Testing using Cypress, Javascript, and Mochawesome library for HTML Report. :sparkles:
 </p>
 
 ## Preparation
@@ -34,10 +34,36 @@ node --version
 
 **👉 [Clone this Repository](https://github.com/Fatimazza/MyCypressTest/)** through Terminal or Command Prompt
 
-### Project
+### Open theProject
 
-Open the Project folder
+Open this Automation Project using VS Code Editor.
+
+### Run the Project
+
+Change to Project directory on Terminal
 
 ```Bash
-cd CypressTest
+cd MyCypressTest
 ```
+
+### Install Cypress
+
+```Bash
+npm install cypress --save-dev
+```
+
+### Run Test Execution on Terminal
+
+```Bash
+npx cypress run 
+```
+
+### Run Test Execution via Browser
+
+```Bash
+npx cypress open
+```
+
+
+
+
