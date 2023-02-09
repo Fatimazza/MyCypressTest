@@ -6,6 +6,14 @@ describe('Load Homepage', () => {
     // visit Homepage
     cy.visit('https://example.cypress.io/todo')
 
+    // assert Navigation Bar
+    cy.get('.navbar-brand').should('have.text', 'cypress.io')
+    cy.get('.navbar').contains('Commands').should('exist')
+    cy.get('.navbar').contains('Utilities').should('exist')
+    cy.get('.navbar').contains('Cypress API').should('exist')
+  })
+
+  it('Display Web Title & Default Todo', () => {
     // assertion failed example
     // cy.contains('h1', 'Todos App')
 
@@ -18,12 +26,6 @@ describe('Load Homepage', () => {
     // cy.contains('[data-cy="app-title"]', 'todos')
     // cy.get('[data-cy="app-title"]').should('have.text', 'todos')
     cy.get('[data-test="new-todo"]').should('have.text', '')
-
-    // assert Navigation Bar
-    cy.get('.navbar-brand').should('have.text', 'cypress.io')
-    cy.get('.navbar').contains('Commands').should('exist')
-    cy.get('.navbar').contains('Utilities').should('exist')
-    cy.get('.navbar').contains('Cypress API').should('exist')
   })
 
   it('Show Expected Elements', () => {
