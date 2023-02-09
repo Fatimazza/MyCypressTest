@@ -6,13 +6,14 @@
 
 ## Preparation
 
-What needs to be prepared before running this project
+What will to be used on this project
 
 | Item           | Source                                                         |
 | -------------- | ------------------------------------------------------------ |
 | Editor         | VS Code (https://code.visualstudio.com/download) |
 | Package Manager| NPM (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) |
 | UI Test Tools  | Cypress (https://docs.cypress.io/guides/getting-started/installing-cypress) |
+| Test Reporter  | Mochawesome (https://www.npmjs.com/package/mochawesome) |
 | Browser        | Latest version of Chrome / Mozilla Firefox / Edge  |
 
 ## Installation
@@ -58,12 +59,44 @@ Run Test Execution on Terminal
 npx cypress run 
 ```
 
+Video of the Test Execution available on <b> MyCypressTest/cypress/videos/ </b>
+
 Run Test Execution via Browser
 
 ```Bash
 npx cypress open
 ```
 
+### Generate Test Execution HTML Report
 
+Install Mochawesome Reporter
+
+```Bash
+npm install mocha
+npm install mochawesome --save-dev
+npm install mochawesome-merge --save-dev
+```
+
+Run Cypress with the Reporter
+
+Please wait until all test execution finished
+
+```Bash
+npx cypress run --reporter mochawesome
+```
+
+Merge the reports into a single one
+
+```Bash
+npx mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/output.json
+```
+
+Convert the JSON into HTML Report
+
+```Bash
+npx marge cypress/report/output.json --reportDir ./ --inline
+```
+
+Test Execution HTML Report available on <b> MyCypressTest/output.html </b>
 
 
