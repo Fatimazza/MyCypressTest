@@ -5,12 +5,6 @@ describe('Load Homepage', () => {
   it('Load Homepage', () => {
     // visit Homepage
     cy.visit('https://example.cypress.io/todo')
-
-    // assert Navigation Bar
-    cy.get('.navbar-brand').should('have.text', 'cypress.io')
-    cy.get('.navbar').contains('Commands').should('exist')
-    cy.get('.navbar').contains('Utilities').should('exist')
-    cy.get('.navbar').contains('Cypress API').should('exist')
   })
 
   it('Display Web Title & Default Todo', () => {
@@ -32,6 +26,14 @@ describe('Load Homepage', () => {
     // https://on.cypress.io/get
     // assert Homepage elements
     cy.get('.new-todo').get('footer').should('exist')
+  })
+
+  it('Display Navigation Bar', () => {
+    // assert Navigation Bar
+    cy.get('.navbar-brand').should('have.text', 'cypress.io')
+    cy.get('.navbar').contains('Commands').should('exist')
+    cy.get('.navbar').contains('Utilities').should('exist')
+    cy.get('.navbar').contains('Cypress API').should('exist')
   })
 
   it('Show Expected Elements using loop', () => {
