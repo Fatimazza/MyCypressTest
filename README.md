@@ -6,7 +6,7 @@
 
 ## Preparation
 
-What will to be used on this project
+What will be used on this project
 
 | Item           | Source                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -20,7 +20,7 @@ What will to be used on this project
 
 Install VS Code Editor and NPM.
 
-To check wheter you already installed NPM & Node.js
+To check whether you already installed NPM & Node.js
 
 ```Bash
 npm --version
