@@ -8,6 +8,8 @@ describe('Load Homepage', () => {
   })
 
   it('Display Web Title & Default Todo', () => {
+    cy.visit('https://example.cypress.io/todo')
+
     // assertion failed example
     // cy.contains('h1', 'Todos App')
 
@@ -23,12 +25,16 @@ describe('Load Homepage', () => {
   })
 
   it('Show Expected Elements', () => {
+    cy.visit('https://example.cypress.io/todo')
+
     // https://on.cypress.io/get
     // assert Homepage elements
     cy.get('.new-todo').get('footer').should('exist')
   })
 
   it('Display Navigation Bar', () => {
+    cy.visit('https://example.cypress.io/todo')
+
     // assert Navigation Bar
     cy.get('.navbar-brand').should('have.text', 'cypress.io')
     cy.get('.navbar').contains('Commands').should('exist')
