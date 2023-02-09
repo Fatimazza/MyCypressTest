@@ -79,7 +79,7 @@ npm install mochawesome-merge --save-dev
 
 Run Cypress with the Reporter
 
-Please wait until all test execution finished
+> Note: Please wait until all test execution finished
 
 ```Bash
 npx cypress run --reporter mochawesome
