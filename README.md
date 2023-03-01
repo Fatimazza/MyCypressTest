@@ -16,7 +16,7 @@ What will be used on this project
 | Test Reporter  | Mochawesome (https://www.npmjs.com/package/mochawesome) |
 | Browser        | Latest version of Chrome / Mozilla Firefox / Edge  |
 
-## Installation
+## Pre-Requisite Installation
 
 Install VS Code Editor and NPM.
 
